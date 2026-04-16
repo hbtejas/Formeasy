@@ -1,30 +1,66 @@
-# Forms Pro (MERN Monorepo)
+# Forms Pro (Vercel-Ready Monorepo)
 
-## Structure
+## Deploy Target
 
-- client: React + Vite + TypeScript app
-- server: Express + TypeScript + MongoDB API
+Single Vercel project:
+- Frontend: Vite build output (`dist`)
+- Backend: Vercel Serverless Functions under [api](api)
 
-## Quick Start
+## Project Structure
 
-1. Copy env files:
-   - server/.env.example -> server/.env
-   - client/.env.example -> client/.env
-2. Install dependencies:
-   - npm install
-3. Run in development:
-   - npm run dev:server
-   - npm run dev:client
-4. Build:
-   - npm run build
+- [api](api): serverless API routes
+- [lib](lib): shared backend DB/auth/models/middleware
+- [src](src): React frontend
+- [vercel.json](vercel.json): Vercel routing and build config
 
-## Deploy
+## Environment Variables (Vercel)
 
-- Frontend: Vercel static build from client
-- Backend: Railway/Render with server app
-- Optional root vercel.json includes route rewrite for /api proxy
+Set these in Vercel Project Settings -> Environment Variables:
+- `MONGODB_URI`
+- `JWT_SECRET`
+- `JWT_REFRESH_SECRET`
+- `VITE_API_URL=/api`
 
-## API Base
+You can copy from [.env.example](.env.example).
 
-- Backend API root: /api
-- Health check: /health
+## Local Run
+
+1. Install dependencies:
+
+```bash
+npm install
+npm --prefix server install
+```
+
+2. Start backend (local Express compatibility server):
+
+```bash
+npm --prefix server run dev
+```
+
+3. Start frontend:
+
+```bash
+npm run dev
+```
+
+## Production Build Check
+
+```bash
+npm run build
+```
+
+## Vercel Deploy
+
+1. Push to GitHub.
+2. Import repo in Vercel.
+3. Confirm build settings:
+   - Build Command: `vite build`
+   - Output Directory: `dist`
+4. Add environment variables above.
+5. Deploy.
+
+## Notes
+
+- API calls use `VITE_API_URL` and should be `/api` in Vercel.
+- Refresh token is sent via httpOnly cookie from auth endpoints.
