@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { publicApi } from "@/api/publicApi";
 import { responsesApi } from "@/api/responsesApi";
 import { FieldRenderer } from "@/components/fields/FieldRenderer";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { useAuthStore } from "@/store/authStore";
 import type { Form } from "@/types";
 import { buildDynamicFormSchema } from "@/utils/validation";

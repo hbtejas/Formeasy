@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { formsApi } from "@/api/formsApi";
 import { responsesApi } from "@/api/responsesApi";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import type { Form, FormResponse } from "@/types";
 

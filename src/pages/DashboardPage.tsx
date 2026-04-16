@@ -5,8 +5,8 @@ import { formsApi } from "@/api/formsApi";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { FormGrid } from "@/components/forms/FormGrid";
 import { EmptyState } from "@/components/forms/EmptyState";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/Button";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { useForms } from "@/hooks/useForms";
 
 export const DashboardPage = () => {

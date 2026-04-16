@@ -1,5 +1,5 @@
 import { FilePlus2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 export const EmptyState = ({ onCreate }: { onCreate: () => void }) => (
   <div className="flex min-h-[320px] flex-col items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white text-center">

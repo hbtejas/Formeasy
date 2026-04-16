@@ -1,7 +1,7 @@
 import { MoreVertical, Pencil, Share2, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
 import { formatDate } from "@/utils/helpers";
 import type { Form } from "@/types";
 

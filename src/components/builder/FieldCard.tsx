@@ -1,8 +1,8 @@
 import { GripVertical, Trash2 } from "lucide-react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/Badge";
+import { Input } from "@/components/ui/Input";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/utils/cn";
 import { FIELD_LABEL_BY_TYPE } from "@/utils/constants";
