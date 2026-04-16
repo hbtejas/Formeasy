@@ -1,12 +1,13 @@
 import { GripVertical, Trash2 } from "lucide-react";
+import type { ChangeEvent } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Badge } from "@/components/ui/Badge";
-import { Input } from "@/components/ui/Input";
-import { Switch } from "@/components/ui/switch";
-import { cn } from "@/utils/cn";
-import { FIELD_LABEL_BY_TYPE } from "@/utils/constants";
-import type { FormField } from "@/types";
+import { Badge } from "../ui/Badge";
+import { Input } from "../ui/Input";
+import { Switch } from "../ui/switch";
+import { cn } from "../../utils/cn";
+import { FIELD_LABEL_BY_TYPE } from "../../utils/constants";
+import type { FormField } from "../../types";
 
 type Props = {
   field: FormField;
@@ -36,11 +37,11 @@ export const FieldCard = ({ field, selected, onSelect, onUpdate, onDelete }: Pro
         <button className="rounded p-1 text-slate-400 hover:bg-slate-100" {...attributes} {...listeners}>
           <GripVertical className="size-4" />
         </button>
-        <Input value={field.label} onChange={(e) => onUpdate({ label: e.target.value })} />
+        <Input value={field.label} onChange={(e: ChangeEvent<HTMLInputElement>) => onUpdate({ label: e.target.value })} />
         <Badge className="bg-slate-100 text-slate-700">{FIELD_LABEL_BY_TYPE[field.type]}</Badge>
         <div className="flex items-center gap-2">
           <span className="text-xs text-slate-500">Required</span>
-          <Switch checked={field.required} onCheckedChange={(checked) => onUpdate({ required: checked })} />
+          <Switch checked={field.required} onCheckedChange={(checked: boolean) => onUpdate({ required: checked })} />
         </div>
         <button onClick={onDelete} className="rounded p-2 text-rose-500 hover:bg-rose-50">
           <Trash2 className="size-4" />
